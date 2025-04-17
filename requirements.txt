@@ -31,3 +31,4 @@ rsa==4.9
 tomli==2.2.1
 uritemplate==4.1.1
 urllib3==2.3.0
+streamlit==1.35.0

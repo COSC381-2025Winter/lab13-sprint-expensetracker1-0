@@ -26,8 +26,25 @@ def main():
     expenses = []  # Clear local list
     loaded_expenses = load_expenses_from_sheets()
     print("Expenses loaded from Google Sheets:")
-    for exp in loaded_expenses:
-        print(exp)
+    
+    # Add date filtering input
+    start_date_str = input("Enter start date (YYYY-MM-DD, press Enter for no start date): ").strip()
+    end_date_str = input("Enter end date (YYYY-MM-DD, press Enter for no end date): ").strip()
+
+    # Use None if the input is empty, otherwise use the string
+    start_date = start_date_str if start_date_str else None
+    end_date = end_date_str if end_date_str else None
+
+    print(f"\nDisplaying expenses" + (f" from {start_date}" if start_date else "") + (f" to {end_date}" if end_date else "") + ":")
+    
+    # Pass dates to view_expenses
+    filtered_expenses = view_expenses(start_date=start_date, end_date=end_date)
+    if filtered_expenses:
+        for exp in filtered_expenses:
+            print(exp)
+    else:
+        print("No expenses found within the specified date range.")
+
 
 if __name__ == "__main__":
     main()
