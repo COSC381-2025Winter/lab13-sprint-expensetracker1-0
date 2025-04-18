@@ -9,28 +9,23 @@ labels: bug
 
 
 **Bug Description**
-
-_Give a clear description of the bug._
+- _Give a clear description of the bug._
 
 
 **Command used**
-
-_What command did you use to run the program?_
+- _What command did you use to run the program?_
 
 
 **Steps to Reproduce**
-
-_List exact steps to replicate the issue._
+- _List exact steps to replicate the issue._
 
 
 **Actual Output**
-
-_What did the program do? (Logs, Errors, or Screenshot)_
+- _What did the program do? (Logs, Errors, or Screenshot)_
 
 
 **Expected behavior**
-
-_What you expected to happen_
+- _What you expected to happen_
 
 
 **OS/Environment**
