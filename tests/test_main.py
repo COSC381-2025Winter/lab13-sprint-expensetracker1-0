@@ -7,6 +7,8 @@ def test_print_messages(capsys, mocker):
     # Mock the Google Sheets API service to avoid real API calls
     mock_service = MagicMock()
     mocker.patch("expense_manager.authenticate_google_sheets", return_value=mock_service)
+    # Mock the input function to return empty strings for date prompts
+    mocker.patch('builtins.input', return_value="")
 
     # Act
     main()
@@ -19,4 +21,3 @@ def test_print_messages(capsys, mocker):
     assert "Save response:" in captured.out
     assert "\nClearing local expenses and loading from Google Sheets..." in captured.out
     assert "Expenses loaded from Google Sheets:" in captured.out
-    

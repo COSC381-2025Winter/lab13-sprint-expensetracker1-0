@@ -74,8 +74,21 @@ def add_expense(expense):
         raise TypeError("Expected an Expense object")
     expenses.append(expense)
 
-def view_expenses():
-    return expenses
+def view_expenses(start_date=None, end_date=None):
+    """Returns a list of expenses, optionally filtered by date range."""
+    if not start_date and not end_date:
+        return expenses  # Return all if no dates are specified
+
+    filtered_expenses = []
+    for expense in expenses:
+        # Assume date format is "YYYY-MM-DD" and compare as strings
+        if start_date and expense.date < start_date:
+            continue
+        if end_date and expense.date > end_date:
+            continue
+        filtered_expenses.append(expense)
+    
+    return filtered_expenses
 
 def delete_expense(index):
     if 0 <= index < len(expenses):
