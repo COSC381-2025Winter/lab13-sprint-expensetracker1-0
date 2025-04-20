@@ -1,6 +1,7 @@
 import streamlit as st
 import expense_manager
 from datetime import datetime
+import pandas as pd
 
 # Set page title
 st.set_page_config(page_title="Expense Tracker")
@@ -74,14 +75,28 @@ def display_expenses():
         # Display filtered expenses
         st.subheader("Expenses")
         if filtered_expenses:
-            # Prepare data for display (e.g., in a DataFrame)
-            expense_data = [{
+            # Prepare and display the DataFrame
+            df = pd.DataFrame([{
                 "Date": exp.date,
                 "Category": exp.category,
-                "Amount": f"${exp.amount:.2f}",
+                "Amount": exp.amount,
                 "Description": exp.description
-            } for exp in filtered_expenses]
-            st.dataframe(expense_data)
+            } for exp in filtered_expenses])
+
+            st.dataframe(df)
+
+            # Calculating total expenses and summary by category developed using ChatGPT on 4/19/25
+            # Prompt: "calculate total expenses over time and categorize spending with a calculation function. 
+            #          (previous code block copy and pasted to show what we had to work with)"
+            # --- Summary: Total Expenses ---
+            st.subheader("Summary")
+            total_amount = df["Amount"].sum()
+            st.metric(label="Total Expenses", value=f"${total_amount:.2f}")
+
+            # --- Summary by Category ---
+            st.subheader("Expenses by Category")
+            category_summary = df.groupby("Category")["Amount"].sum().sort_values(ascending=False)
+            st.dataframe(category_summary.reset_index().rename(columns={"Amount": "Total Spent"}))
         else:
             st.write("No expenses found" + (f" between {start_date_str}" if start_date_str else "") + (f" and {end_date_str}" if end_date_str else "") + ".")
 
