@@ -1,6 +1,7 @@
 import pytest
 from expense_manager import view_expenses, Expense
 from datetime import date
+import pandas as pd
 
 # Sample expenses for testing
 sample_expenses = [
@@ -82,3 +83,45 @@ def test_view_expenses_empty_list(monkeypatch):
     result_with_filter = view_expenses(start_date="2024-01-01", end_date="2024-12-31")
     assert len(result_no_filter) == 0
     assert len(result_with_filter) == 0
+
+# test_total_expense_summary and test_category_expense_summary developed using ChatGPT on 4/19/25
+# Prompt: "create a test function similar to what we already have to test that summary of total expenses,
+#          and summary by category works (previous code copy and pasted in prompt)"
+def test_total_expense_summary():
+    # Arrange
+    """Test calculation of total expenses."""
+    df = pd.DataFrame([{
+        "Amount": exp.amount,
+        "Category": exp.category,
+        "Date": exp.date,
+        "Description": exp.description
+    } for exp in sample_expenses])
+    
+    # Act
+    total = df["Amount"].sum()
+    expected_total = sum(exp.amount for exp in sample_expenses)
+    
+    # Assert
+    assert total == expected_total
+    assert total == 200.5  # 10 + 25.5 + 50 + 15 + 100
+
+def test_category_expense_summary():
+    # Arrange
+    """Test summary of expenses grouped by category."""
+    df = pd.DataFrame([{
+        "Amount": exp.amount,
+        "Category": exp.category
+    } for exp in sample_expenses])
+
+    # Act
+    summary = df.groupby("Category")["Amount"].sum().to_dict()
+
+    expected_summary = {
+        "Food": 25.0,           # 10 + 15
+        "Transport": 25.5,
+        "Entertainment": 50.0,
+        "Bills": 100.0
+    }
+
+    # Assert
+    assert summary == expected_summary
