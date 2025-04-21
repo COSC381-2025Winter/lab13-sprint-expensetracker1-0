@@ -99,3 +99,11 @@ def delete_expense(index):
 def sum_expenses(start_date=None, end_date=None):
     filtered = view_expenses(start_date=start_date, end_date=end_date)
     return sum(exp.amount for exp in filtered)
+
+def avg_expenses(start_date=None, end_date=None):
+    filtered = view_expenses(start_date=start_date, end_date=end_date)
+    if not filtered:
+        return 0.0
+    total = sum(exp.amount for exp in filtered)
+    avg = total/len(filtered)
+    return avg
