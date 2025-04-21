@@ -95,3 +95,7 @@ def delete_expense(index):
         del expenses[index]
         return True
     return False
+
+def sum_expenses(start_date=None, end_date=None):
+    filtered = view_expenses(start_date=start_date, end_date=end_date)
+    return sum(exp.amount for exp in filtered)
