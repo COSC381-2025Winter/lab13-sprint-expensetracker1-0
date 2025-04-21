@@ -25,3 +25,10 @@ This application integrates with Google Sheets to store and retrieve expense dat
 1.  You need to have a Google Cloud project set up with the Google Sheets API enabled.
 2.  Download the `credentials.json` file from your Google Cloud project and place it in the same directory as the application.
 3.  Run `python3 main.py` once to authenticate with Google Sheets. This will create a `token.json` file.
+
+## Deployment
+1.  Create and activate a new virtual environment
+2.  Install the package in the virtual environment with this command:
+ ```bash
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps lab13_Expense_tracker_W381 --upgrade
+```
