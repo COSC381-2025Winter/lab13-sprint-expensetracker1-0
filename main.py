@@ -1,5 +1,5 @@
 from expense import Expense
-from expense_manager import add_expense, view_expenses, save_expenses_to_sheets, load_expenses_from_sheets
+from expense_manager import add_expense, view_expenses, save_expenses_to_sheets, load_expenses_from_sheets, sum_expenses, avg_expenses
 
 # Example usage of expense tracker app with google sheets api integration
 # Developed using perplexity.ai on 04/15/25
@@ -42,6 +42,13 @@ def main():
     if filtered_expenses:
         for exp in filtered_expenses:
             print(exp)
+        total = sum_expenses(start_date=start_date, end_date=end_date)
+        avg = avg_expenses(start_date=start_date, end_date=end_date)
+        print(f"\nTotal spent: "+
+              (f" from {start_date}" if start_date else "")+
+              (f" to {end_date}" if end_date else "")+
+              f": ${total:.2f}")
+        print(f"Average spent: ${avg:.2f}")
     else:
         print("No expenses found within the specified date range.")
 
