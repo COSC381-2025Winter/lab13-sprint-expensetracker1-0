@@ -7,7 +7,7 @@ version = "0.0.1"
 authors = [
   { name="Caleb Bujauskas and Group", email="cbujausk@emich.edu" },
 ]
-description = "A small example package"
+description = "expense tracker package"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
