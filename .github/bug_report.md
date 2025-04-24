@@ -38,7 +38,7 @@ If applicable, add screenshots to help explain your problem.
 
 
 **Additional Dependencies**
-Any packages installed besides the ones in the requirements.txt
+- Any packages installed besides the ones in the requirements.txt
 
 **Additional context**
-Add any other context about the problem here.
+- Add any other context about the problem here.
