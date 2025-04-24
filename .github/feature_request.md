@@ -3,6 +3,7 @@ name: Feature Request
 about: Suggest an idea to enhance the program
 title: "[Feature] "
 labels: enhancement
+assignees: ''
 ---
 
 ## Feature Request
@@ -14,6 +15,10 @@ labels: enhancement
 
 **Desired outcome**
 - _A description of what you want for the program._
+
+
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered
 
 
 **Additional context**
