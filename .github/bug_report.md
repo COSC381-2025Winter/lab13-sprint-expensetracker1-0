@@ -20,6 +20,8 @@ assignees: ''
 **Steps to Reproduce**
 - _List exact steps to replicate the issue._
 
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
 **Actual Output**
 - _What did the program do? (Logs, Errors, or Screenshot)_
@@ -32,3 +34,11 @@ assignees: ''
 **OS/Environment**
 
 - OS:
+
+
+
+**Additional Dependencies**
+Any packages installed besides the ones in the requirements.txt
+
+**Additional context**
+Add any other context about the problem here.
