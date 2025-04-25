@@ -2,11 +2,11 @@
 
 This is a simple expense tracker application.
 
-## How to Set up and Run
+## How to Run
 
 1.  Clone the repository:
     ```bash
-    git clone <https://github.com/COSC381-2025Winter/lab13-sprint-expensetracker1-0.git> 
+    git clone <repository_url> 
     ```
     Replace `<repository_url>` with the actual URL of the repository.
 2.  Make sure you have Python 3 and Streamlit installed. If not, install Streamlit using:
@@ -22,6 +22,23 @@ This is a simple expense tracker application.
     streamlit run app.py
     ```
 5.  Open your browser to the address shown in the terminal (usually `http://localhost:8501`).
+
+## Usage
+
+Once the application is running in your browser:
+
+1.  **Add an Expense:**
+    *   Fill in the "Amount", "Date", "Category", and "Description" fields under the "Add New Expense" section.
+    *   Click the "Add Expense" button. The expense will be added locally and saved to Google Sheets.
+2.  **View Expenses:**
+    *   Expenses loaded from Google Sheets are displayed in a table under the "Expenses" section.
+    *   A summary of "Total Expenses" and "Expenses by Category" is shown below the table.
+3.  **Filter Expenses by Date:**
+    *   Use the "Start date" and "End date" pickers under the "Filter Expenses by Date" section to narrow down the displayed expenses.
+4.  **Refresh Data:**
+    *   Click the "Refresh Data" button to reload the latest expenses from Google Sheets.
+5.  **Manual Save (Optional):**
+    *   Click the "Save Expenses to Google Sheets" button if you need to manually trigger a save (though adding an expense usually saves automatically).
 
 ## Google Sheets Integration
 
