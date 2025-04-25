@@ -2,7 +2,7 @@
 
 This is a simple expense tracker application.
 
-## How to Run
+## How to Set up and Run
 
 1.  Clone the repository:
     ```bash
