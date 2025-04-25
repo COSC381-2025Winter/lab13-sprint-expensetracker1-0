@@ -6,9 +6,9 @@ This is a simple expense tracker application.
 
 1.  Clone the repository:
     ```bash
-    git clone <repository_url> 
+    git clone <https://github.com/COSC381-2025Winter/lab13-sprint-expensetracker1-0.git> 
     ```
-    Replace `<repository_url>` with the actual URL of your repository.
+    Replace `<repository_url>` with the actual URL of the repository.
 2.  Make sure you have Python 3 and Streamlit installed. If not, install Streamlit using:
     ```bash
     pip install streamlit
