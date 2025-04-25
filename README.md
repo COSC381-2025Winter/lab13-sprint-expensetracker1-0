@@ -4,28 +4,19 @@ This is a simple expense tracker application.
 
 ## How to Run
 
-1.  **Clone the Repository**  
-    Clone the GitHub repository to your local machine:
-    ```bash
-    git clone https://github.com/COSC381-2025Winter/lab13-sprint-expensetracker1-0.git
-    ```
-2.  **Install Python 3 and Streamlit**  
-    Make sure you have Python 3 installed. Then, install Streamlit using:
+1.  Make sure you have Python 3 and Streamlit installed. If not, install Streamlit using:
     ```bash
     pip install streamlit
     ```
-3.  **Install Required Packages**  
-    Install the other required packages:
+2.  Install the other required packages:
     ```bash
     pip install -r requirements.txt
     ```
-4.  **Run the Application**  
-    Start the application with the following command:
+3.  To run the application, use the following command:
     ```bash
     streamlit run app.py
     ```
-5.  **Open the App in Your Browser**  
-    Open your browser to the address shown in the terminal (usually `http://localhost:8501`).
+4.  Open your browser to the address shown in the terminal (usually `http://localhost:8501`).
 
 ## Google Sheets Integration
 
@@ -37,8 +28,15 @@ This application integrates with Google Sheets to store and retrieve expense dat
 
 ## Deployment
 
-1.  Create and activate a new virtual environment.
-2.  Install the package in the virtual environment with this command:
+Deployment in this lab refers to packaging your project and uploading it to test.pypi.org.
+
+1. Create and activate a new virtual environment.
+2. Install the package in the virtual environment with this command:
     ```bash
-    python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps lab13_Expense_tracker_W381 --upgrade
+    python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps lab13_Expense_t
+    ```
+3. After installation, run the program:
+    ```bash
+    python3 main.py
+    streamlit run app.py
     ```
