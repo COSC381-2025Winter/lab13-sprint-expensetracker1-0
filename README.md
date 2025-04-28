@@ -55,7 +55,7 @@ Deployment in this lab refers to packaging your project and uploading it to test
 1. Create and activate a new virtual environment.
 2. Install the package in the virtual environment with this command:
     ```bash
-    python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps lab13_Expense_t
+    python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps lab13_Expense_tracker_W381
     ```
 3. After installation, run the program:
     ```bash
